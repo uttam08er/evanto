@@ -1,0 +1,28 @@
+# Environment variables (NEVER commit these - they have secrets!)
+.env
+.env.local
+.env.production
+
+# Node.js dependencies (100MB+ folder, reinstall with npm install)
+node_modules/
+*/node_modules/
+
+# Vite build output
+dist/
+build/
+
+# Log files
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store           # Mac
+Thumbs.db           # Windows
+
+# IDE files
+.vscode/
+.idea/
+
+# Uploaded files (save to Cloudinary instead)
+server/uploads/*
+!server/uploads/.gitkeep
