@@ -40,7 +40,7 @@ export const authAPI = {
 };
 
 export const venueAPI = {
-  getAll: (params) => api.get("/venues", { params }),
+  getAll: (params) => api.get("/api/venues", { params }),
   getById: (id) => api.get(`/venues/${id}`),
   getFeatured: () => api.get("/api/venues/featured"),
   getMyVenues: () => api.get("/venues/owner/my-venues"),
