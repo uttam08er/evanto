@@ -1,16 +1,16 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "/api",
-  withCredentials: true, 
-});
-// const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 // const api = axios.create({
-//   baseURL: API_BASE_URL,
-//   timeout: 30000,
+//   baseURL: "/api",
 //   withCredentials: true, 
-//   headers: { "Content-Type": "application/json" },
 // });
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const api = axios.create({
+  baseURL: API_BASE_URL,
+  timeout: 30000,
+  withCredentials: true, 
+  headers: { "Content-Type": "application/json" },
+});
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
@@ -45,7 +45,7 @@ export const authAPI = {
 export const venueAPI = {
   getAll: (params) => api.get("/venues", { params }),
   getById: (id) => api.get(`/venues/${id}`),
-  getFeatured: () => api.get("/venues/featured"),
+  getFeatured: () => api.get("/api/venues/featured"),
   getMyVenues: () => api.get("/venues/owner/my-venues"),
   create: (formData) => api.post("/venues", formData, {
     headers: { "Content-Type": "multipart/form-data" }, 
