@@ -35,6 +35,7 @@ const io = new Server(server, {
   cors: {
     origin: process.env.CLIENT_URL || "http://localhost:5173", 
     methods: ["GET", "POST"],
+    credentials: true,
   },
 });
 initSocket(io); 
@@ -44,7 +45,6 @@ const limiter = rateLimit({
   max: 100,                 
   message: "Too many requests from this IP, please try again after 15 minutes",
 });
-
 
 app.use(helmet());         
 app.use(morgan("dev"));    
