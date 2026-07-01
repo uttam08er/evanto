@@ -29,71 +29,71 @@ api.interceptors.response.use(
 );
 
 export const authAPI = {
-  register: (data) => api.post("/api/auth/register", data),
-  login: (data) => api.post("/api/auth/login", data),
-  logout: () => api.post("/api/auth/logout"),
-  getMe: () => api.get("/api/auth/me"),
-  forgotPassword: (email) => api.post("/api/auth/forgot-password", { email }),
-  resetPassword: (token, password) => api.put(`/api/auth/reset-password/${token}`, { password }),
-  changePassword: (data) => api.put("/api/auth/change-password", data),
-  verifyEmail: (token) => api.get(`/api/auth/verify-email/${token}`),
+  register: (data) => api.post("/auth/register", data),
+  login: (data) => api.post("/auth/login", data),
+  logout: () => api.post("/auth/logout"),
+  getMe: () => api.get("/auth/me"),
+  forgotPassword: (email) => api.post("/auth/forgot-password", { email }),
+  resetPassword: (token, password) => api.put(`/auth/reset-password/${token}`, { password }),
+  changePassword: (data) => api.put("/auth/change-password", data),
+  verifyEmail: (token) => api.get(`/auth/verify-email/${token}`),
 };
 
 export const venueAPI = {
   getAll: (params) => api.get("/api/venues", { params }),
-  getById: (id) => api.get(`/api/venues/${id}`),
+  getById: (id) => api.get(`/venues/${id}`),
   getFeatured: () => api.get("/api/venues/featured"),
-  getMyVenues: () => api.get("/api/venues/owner/my-venues"),
-  create: (formData) => api.post("/api/venues", formData, {
+  getMyVenues: () => api.get("/venues/owner/my-venues"),
+  create: (formData) => api.post("/venues", formData, {
     headers: { "Content-Type": "multipart/form-data" }, 
   }),
-  update: (id, formData) => api.put(`/api/venues/${id}`, formData, {
+  update: (id, formData) => api.put(`/venues/${id}`, formData, {
     headers: { "Content-Type": "multipart/form-data" },
   }),
-  delete: (id) => api.delete(`/api/venues/${id}`),
+  delete: (id) => api.delete(`/venues/${id}`),
 };
 
 export const bookingAPI = {
-  create: (data) => api.post("/api/bookings", data),
-  confirmPayment: (id, data) => api.put(`/api/bookings/${id}/confirm-payment`, data),
-  getMyBookings: () => api.get("/api/bookings/my-bookings"),
-  getOwnerBookings: () => api.get("/api/bookings/owner-bookings"),
-  getById: (id) => api.get(`/api/bookings/${id}`),
-  cancel: (id, reason) => api.put(`/api/bookings/${id}/cancel`, { reason }),
+  create: (data) => api.post("/bookings", data),
+  confirmPayment: (id, data) => api.put(`/bookings/${id}/confirm-payment`, data),
+  getMyBookings: () => api.get("/bookings/my-bookings"),
+  getOwnerBookings: () => api.get("/bookings/owner-bookings"),
+  getById: (id) => api.get(`/bookings/${id}`),
+  cancel: (id, reason) => api.put(`/bookings/${id}/cancel`, { reason }),
 };
 
 export const reviewAPI = {
-  getByVenue: (venueId) => api.get(`/api/reviews/${venueId}`),
-  add: (venueId, data) => api.post(`/api/reviews/${venueId}`, data),
-  update: (id, data) => api.put(`/api/reviews/${id}`, data),
-  delete: (id) => api.delete(`/api/reviews/${id}`),
+  getByVenue: (venueId) => api.get(`/reviews/${venueId}`),
+  add: (venueId, data) => api.post(`/reviews/${venueId}`, data),
+  update: (id, data) => api.put(`/reviews/${id}`, data),
+  delete: (id) => api.delete(`/reviews/${id}`),
 };
 
 export const wishlistAPI = {
-  get: () => api.get("/api/wishlist"),
-  toggle: (venueId) => api.post(`/api/wishlist/${venueId}`),
+  get: () => api.get("/wishlist"),
+  toggle: (venueId) => api.post(`/wishlist/${venueId}`),
 };
 
 export const notificationAPI = {
-  get: () => api.get("/api/notifications"),
-  markRead: (id) => api.put(`/api/notifications/${id}/read`),
-  markAllRead: () => api.put("/api/notifications/read-all"),
+  get: () => api.get("/notifications"),
+  markRead: (id) => api.put(`/notifications/${id}/read`),
+  markAllRead: () => api.put("/notifications/read-all"),
 };
 
 export const userAPI = {
-  getProfile: () => api.get("/api/users/profile"),
-  updateProfile: (formData) => api.put("/api/users/profile", formData, {
+  getProfile: () => api.get("/users/profile"),
+  updateProfile: (formData) => api.put("/users/profile", formData, {
     headers: { "Content-Type": "multipart/form-data" },
   }),
 };
 
 export const adminAPI = {
-  getAnalytics: () => api.get("/api/admin/analytics"),
-  getUsers: () => api.get("/api/admin/users"),
-  toggleUserBlock: (id) => api.put(`/api/admin/users/${id}/toggle-block`),
-  getVenues: (status) => api.get("/api/admin/venues", { params: { status } }),
-  updateVenueStatus: (id, data) => api.put(`/api/admin/venues/${id}/status`, data),
-  getBookings: () => api.get("/api/admin/bookings"),
+  getAnalytics: () => api.get("/admin/analytics"),
+  getUsers: () => api.get("/admin/users"),
+  toggleUserBlock: (id) => api.put(`/admin/users/${id}/toggle-block`),
+  getVenues: (status) => api.get("/admin/venues", { params: { status } }),
+  updateVenueStatus: (id, data) => api.put(`/admin/venues/${id}/status`, data),
+  getBookings: () => api.get("/admin/bookings"),
 };
 
 export default api;
