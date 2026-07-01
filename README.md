@@ -1,4 +1,4 @@
-# 🎉 Evently - Event Booking Platform
+# 🎉 Evanto - Event Booking Platform
 
 A full-stack event venue booking platform built with the MERN stack (MongoDB, Express, React, Node.js).
 
@@ -21,7 +21,7 @@ A full-stack event venue booking platform built with the MERN stack (MongoDB, Ex
 ## 📁 PROJECT STRUCTURE
 
 ```
-evently/
+evanto/
 ├── client/                     ← React Frontend (Vite)
 │   ├── src/
 │   │   ├── components/
@@ -135,7 +135,7 @@ Before starting, make sure you have these installed on your computer:
 If you downloaded the ZIP, extract it. If cloning from GitHub:
 ```bash
 git clone <your-repo-url>
-cd evently
+cd evanto
 ```
 
 ### STEP 2: Set Up MongoDB Atlas (Free Cloud Database)
@@ -144,7 +144,7 @@ cd evently
 2. Create an account and log in
 3. Click "Build a Database" → Choose "M0 FREE" → Choose a region near you → Click "Create"
 4. **Create a database user:**
-   - Username: `eventlyadmin` (any name)
+   - Username: `evantoadmin` (any name)
    - Password: click "Autogenerate" and SAVE the password!
    - Click "Create User"
 5. **Allow connections from anywhere:**
@@ -152,10 +152,10 @@ cd evently
    - Click "Add Entry" then "Finish and Close"
 6. **Get connection string:**
    - Click "Connect" → "Drivers" → Copy the string that looks like:
-   - `mongodb+srv://eventlyadmin:<password>@cluster0.xxxxx.mongodb.net/?retryWrites=true`
+   - `mongodb+srv://evantoadmin:<password>@cluster0.xxxxx.mongodb.net/?retryWrites=true`
    - Replace `<password>` with the password you saved
-   - Add `/evently` before the `?` to name your database:
-   - Final: `mongodb+srv://eventlyadmin:YOURPASS@cluster0.xxxxx.mongodb.net/evently?retryWrites=true`
+   - Add `/evanto` before the `?` to name your database:
+   - Final: `mongodb+srv://evantoadmin:YOURPASS@cluster0.xxxxx.mongodb.net/evanto?retryWrites=true`
 
 ### STEP 3: Set Up Cloudinary (Free Image Storage)
 
@@ -183,7 +183,7 @@ cd evently
 3. Click **Security** tab
 4. Enable **2-Step Verification** (required first)
 5. Go back to Security → scroll to **"App passwords"**
-6. Click it → Select app: "Mail" → Select device: "Other" → Name it "Evently"
+6. Click it → Select app: "Mail" → Select device: "Other" → Name it "Evanto"
 7. Google will give you a 16-character password like `abcd efgh ijkl mnop`
 8. Save this password (you won't see it again!)
 9. In .env use your Gmail address as `EMAIL_FROM` and this 16-char password as `EMAIL_PASSWORD`
@@ -203,7 +203,7 @@ Now open `server/.env` in any text editor (Notepad, VS Code, etc.) and fill in:
 ```env
 PORT=5000
 NODE_ENV=development
-MONGO_URI=mongodb+srv://eventlyadmin:YOURPASSWORD@cluster0.xxxxx.mongodb.net/evently?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://evantoadmin:YOURPASSWORD@cluster0.xxxxx.mongodb.net/evanto?retryWrites=true&w=majority
 JWT_SECRET=my_super_secret_key_that_is_very_long_and_random_32chars
 JWT_EXPIRE=7d
 JWT_COOKIE_EXPIRE=7
@@ -235,13 +235,13 @@ Open TWO terminal windows/tabs:
 
 **Terminal 1 - Backend:**
 ```bash
-cd evently/server
+cd evanto/server
 npm install
 ```
 
 **Terminal 2 - Frontend:**
 ```bash
-cd evently/client
+cd evanto/client
 npm install
 ```
 
@@ -258,7 +258,7 @@ You should see:
 ```
 ✅ Connected to MongoDB
 🗑️  Cleared users
-👥 Users seeded: admin@evently.com, owner@evently.com, user@evently.com
+👥 Users seeded: admin@evanto.com, owner@evanto.com, user@evanto.com
 🗑️  Cleared venues
 🏢 Venues seeded: The Grand Palace Banquet, Lakeview Resort & Spa, ...
 🎉 Database seeded successfully!
@@ -268,14 +268,14 @@ You should see:
 
 **Terminal 1 - Start Backend:**
 ```bash
-cd evently/server
+cd evanto/server
 npm run dev
 ```
 You should see: `🚀 Server running on http://localhost:5000`
 
 **Terminal 2 - Start Frontend:**
 ```bash
-cd evently/client
+cd evanto/client
 npm run dev
 ```
 You should see: `➜  Local: http://localhost:5173`
@@ -284,7 +284,7 @@ You should see: `➜  Local: http://localhost:5173`
 
 Open your browser and go to: **http://localhost:5173**
 
-You should see the Evently homepage! 🎉
+You should see the Evanto homepage! 🎉
 
 ---
 
@@ -294,9 +294,9 @@ After running `npm run seed`:
 
 | Role   | Email                  | Password  |
 |--------|------------------------|-----------|
-| Admin  | admin@evently.com      | admin123  |
-| Owner  | owner@evently.com      | owner123  |
-| User   | user@evently.com       | user123   |
+| Admin  | admin@evanto.com      | admin123  |
+| Owner  | owner@evanto.com      | owner123  |
+| User   | user@evanto.com       | user123   |
 
 ---
 
@@ -350,7 +350,7 @@ Use Stripe's test card (does NOT charge real money):
 2. Click "New Project" → "Deploy from GitHub repo"
 3. Select your repo and the `server` folder
 4. Go to "Variables" tab and add ALL your .env variables
-5. Railway auto-deploys and gives you a URL like: `https://evently-backend.railway.app`
+5. Railway auto-deploys and gives you a URL like: `https://evanto-backend.railway.app`
 
 ### Deploy Frontend to Vercel (Free)
 
