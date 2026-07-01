@@ -368,7 +368,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* <section className="py-16">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -415,7 +415,7 @@ const HomePage = () => {
             </>
           )}
         </div>
-      </section> */}
+      </section>
 
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
