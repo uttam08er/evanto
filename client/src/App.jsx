@@ -88,7 +88,7 @@ function App() {
           </div>
         } />
       </Routes>
-      <div className="w-full h-screen bg-primary-500"></div>
+      {/* <div className="w-full h-screen bg-primary-500"></div> */}
     </Suspense>
   );
 }
