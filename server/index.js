@@ -70,7 +70,7 @@ app.use("/api/notifications", notificationRoutes);
 app.use("/api/admin", adminRoutes);
 
 app.get("/", (req, res) => {
-  res.json({ message: "🎉 Evently API is running!", status: "OK" });
+  res.json({ message: "🎉 Evanto API is running!", status: "OK" });
 });
 
 app.use("*", (req, res) => {

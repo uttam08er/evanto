@@ -52,7 +52,7 @@ const LoginPage = () => {
         <div className="text-center mb-8">
           <Link to="/" className="text-3xl">🎉</Link>
           <h1 className="text-2xl font-bold text-gray-900 mt-3">Welcome Back!</h1>
-          <p className="text-gray-500 mt-1">Login to your Evently account</p>
+          <p className="text-gray-500 mt-1">Login to your Evanto account</p>
         </div>
 
         {/* Form */}
@@ -111,7 +111,7 @@ const LoginPage = () => {
             {isLoading ? (
               <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
-              "Login to Evently"
+              "Login to Evanto"
             )}
           </button>
         </form>
@@ -125,9 +125,9 @@ const LoginPage = () => {
 
         <div className="mt-4 p-3 bg-gray-50 rounded-lg text-xs text-gray-500 text-center">
           <p className="font-medium mb-1">Demo Accounts:</p>
-          <p>Admin: admin@evently.com / admin123</p>
-          <p>Owner: owner@evently.com / owner123</p>
-          <p>User: user@evently.com / user123</p>
+          <p>Admin: admin@evanto.com / admin123</p>
+          <p>Owner: owner@evanto.com / owner123</p>
+          <p>User: user@evanto.com / user123</p>
         </div>
       </motion.div>
     </div>

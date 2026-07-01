@@ -74,7 +74,7 @@ const RegisterPage = () => {
             Create Your Account
           </h1>
           <p className="text-gray-500 mt-1">
-            Join Evently and start booking amazing venues
+            Join Evanto and start booking amazing venues
           </p>
         </div>
 

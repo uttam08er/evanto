@@ -4,12 +4,22 @@ import { motion } from "framer-motion";
 import {
   FiSearch,
   FiMapPin,
+  FiGift,
   FiCalendar,
   FiUsers,
   FiArrowRight,
   FiStar,
   FiCheckCircle,
 } from "react-icons/fi";
+import { MdFamilyRestroom, MdCake } from "react-icons/md";
+import { PiHandsClappingLight } from "react-icons/pi";
+import {
+  GiHeartNecklace,
+  GiBigDiamondRing,
+  GiHandBag,
+  GiEngagementRing,
+  GiBabyBottle,
+} from "react-icons/gi";
 import { venueAPI } from "../../services/api";
 import VenueCard from "../../components/venue/VenueCard";
 import LoadingSpinner from "../../components/common/LoadingSpinner";
@@ -27,22 +37,46 @@ const staggerContainer = {
 
 // ---- DATA CONSTANTS ----
 const EVENT_CATEGORIES = [
-  { name: "Wedding", emoji: "💍", color: "bg-rose-50 text-rose-600" },
+  {
+    name: "Wedding",
+    icon: GiHeartNecklace,
+    color: "bg-rose-50 text-rose-600 border-rose-600/20",
+  },
   {
     name: "Birthday Party",
-    emoji: "🎂",
-    color: "bg-yellow-50 text-yellow-600",
+    icon: MdCake,
+    color: "bg-yellow-50 text-yellow-600 border-yellow-600/20",
   },
-  { name: "Corporate Event", emoji: "💼", color: "bg-blue-50 text-blue-600" },
-  { name: "Anniversary", emoji: "❤️", color: "bg-pink-50 text-pink-600" },
-  { name: "Engagement", emoji: "💫", color: "bg-purple-50 text-purple-600" },
-  { name: "Baby Shower", emoji: "🍼", color: "bg-green-50 text-green-600" },
+  {
+    name: "Corporate Event",
+    icon: GiHandBag,
+    color: "bg-blue-50 text-blue-600 border-blue-600/20",
+  },
+  {
+    name: "Anniversary",
+    icon: GiBigDiamondRing,
+    color: "bg-pink-50 text-pink-600 border-pink-600/20",
+  },
+  {
+    name: "Engagement",
+    icon: GiEngagementRing,
+    color: "bg-purple-50 text-purple-600 border-purple-600/20",
+  },
+  {
+    name: "Baby Shower",
+    icon: GiBabyBottle,
+    color: "bg-green-50 text-green-600 border-green-600/20",
+  },
   {
     name: "Farewell Party",
-    emoji: "👋",
-    color: "bg-orange-50 text-orange-600",
+    icon: PiHandsClappingLight,
+    color: "bg-orange-50 text-orange-600 border-orange-600/20",
   },
-  { name: "Family Gathering", emoji: "👨‍👩‍👧‍👦", color: "bg-teal-50 text-teal-600" },
+  {
+    name: "Family Gathering",
+    icon: MdFamilyRestroom,
+    color: "bg-teal-50 text-teal-600 border-teal-600/20",
+  },
 ];
 
 const POPULAR_CITIES = [
@@ -107,7 +141,7 @@ const TESTIMONIALS = [
     name: "Priya Sharma",
     event: "Wedding",
     rating: 5,
-    text: "Evently made our wedding venue search so easy! Found our dream venue in just 2 days.",
+    text: "Evanto made our wedding venue search so easy! Found our dream venue in just 2 days.",
     avatar: "P",
   },
   {
@@ -163,14 +197,8 @@ const HomePage = () => {
 
   return (
     <div>
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-        <HeroBackground/>
-        {/* <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        /> */}
+      <section className="relative min-h-[90vh] py-5 flex items-center justify-center overflow-hidden">
+        <HeroBackground />
 
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <motion.div
@@ -178,7 +206,7 @@ const HomePage = () => {
             animate={{ opacity: 1, scale: 1 }}
             className="inline-flex items-center bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm"
           >
-            🎊 India's #1 Event Booking Platform
+            India's one Event Booking Platform
           </motion.div>
 
           <motion.h1
@@ -225,7 +253,9 @@ const HomePage = () => {
               </div>
 
               <div className="flex items-center border border-gray-200 rounded-xl px-3 py-2 focus-within:border-primary-500">
-                <span className="mr-2 text-lg">🎉</span>
+                <span className="mr-2 text-lg">
+                  <FiGift className="text-primary-500 mr-2 flex-shrink-0" />
+                </span>
                 <select
                   value={searchData.category}
                   onChange={(e) =>
@@ -271,10 +301,19 @@ const HomePage = () => {
             transition={{ delay: 0.5 }}
             className="flex flex-wrap justify-center gap-6 mt-8 text-white/70 text-sm"
           >
-            <span>✅ 1200+ Venues</span>
-            <span>✅ Instant Booking</span>
-            <span>✅ Secure Payments</span>
-            <span>✅ Free Cancellation</span>
+            <span className="flex flex-row gap-2">
+              <FiCheckCircle className="text-green-500 mt-1" /> 1200+ Venues
+            </span>
+            <span className="flex flex-row gap-2">
+              <FiCheckCircle className="text-green-500 mt-1" /> Instant Booking
+            </span>
+            <span className="flex flex-row gap-2">
+              <FiCheckCircle className="text-green-500 mt-1" /> Secure Payments
+            </span>
+            <span className="flex flex-row gap-2">
+              <FiCheckCircle className="text-green-500 mt-1" /> Free
+              Cancellation
+            </span>
           </motion.div>
         </div>
       </section>
@@ -289,7 +328,8 @@ const HomePage = () => {
             className="text-center mb-10"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-              What Are You Celebrating?
+              What Are You{" "}
+              <span className="text-primary-600">Celebrating?</span>
             </h2>
             <p className="text-gray-500 text-lg">
               Find venues perfectly suited for any occasion
@@ -301,48 +341,49 @@ const HomePage = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3"
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8"
           >
-            {EVENT_CATEGORIES.map((cat) => (
-              <motion.div key={cat.name} variants={fadeUp}>
-                <button
-                  onClick={() => navigate(`/venues?category=${cat.name}`)}
-                  className={`w-full p-4 rounded-xl ${cat.color} hover:shadow-md transition-all duration-200 hover:-translate-y-1 text-center`}
-                >
-                  <span className="text-3xl block mb-2">{cat.emoji}</span>
-                  <span className="text-xs font-semibold leading-tight block">
-                    {cat.name}
-                  </span>
-                </button>
-              </motion.div>
-            ))}
+            {EVENT_CATEGORIES.map((cat) => {
+              const Icon = cat.icon;
+
+              return (
+                <motion.div key={cat.name} variants={fadeUp}>
+                  <button
+                    onClick={() => navigate(`/venues?category=${cat.name}`)}
+                    className={`flex flex-col gap-5 w-full p-12 rounded-xl ${cat.color} hover:shadow-md transition-all duration-200 hover:-translate-y-1 text-center items-center justify-center`}
+                  >
+                    <span
+                      className={`block mb-2 border-2 ${cat.color} p-2 rounded-xl`}
+                    >
+                      <Icon size="30" />
+                    </span>
+                    <span className="text-sm font-semibold leading-tight block">
+                      {cat.name}
+                    </span>
+                  </button>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
 
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-10">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-            >
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
-                Featured Venues
-              </h2>
-              <p className="text-gray-500">
-                Handpicked top-rated venues for your events
-              </p>
-            </motion.div>
-            <button
-              onClick={() => navigate("/venues")}
-              className="text-primary-600 font-medium flex items-center hover:underline"
-            >
-              View All <FiArrowRight className="ml-1" />
-            </button>
-          </div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="text-center mb-10"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+              Featured <span className="text-primary-600">Venues</span>
+            </h2>
+            <p className="text-gray-500">
+              Handpicked top-rated venues for your events
+            </p>
+          </motion.div>
 
           {loadingVenues ? (
             <LoadingSpinner />
@@ -357,11 +398,21 @@ const HomePage = () => {
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {featuredVenues.map((venue) => (
-                <VenueCard key={venue._id} venue={venue} />
-              ))}
-            </div>
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {featuredVenues.map((venue) => (
+                  <VenueCard key={venue._id} venue={venue} />
+                ))}
+              </div>
+              <div className="flex justify-center mt-10">
+                <button
+                  onClick={() => navigate("/venues")}
+                  className="text-primary-600 font-medium flex items-center hover:underline"
+                >
+                  View All <FiArrowRight className="ml-1" />
+                </button>
+              </div>
+            </>
           )}
         </div>
       </section>
@@ -376,7 +427,7 @@ const HomePage = () => {
             className="text-center mb-10"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-              Popular Cities
+              Popular <span className="text-primary-600">Cities</span>
             </h2>
             <p className="text-gray-500">
               Explore venues in India's most vibrant cities
@@ -425,7 +476,7 @@ const HomePage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-              How Evently Works
+              How Evanto <span className="text-primary-600">Works</span>
             </h2>
             <p className="text-gray-500">
               Book your dream venue in 4 simple steps
@@ -497,7 +548,7 @@ const HomePage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-              What Our Customers Say
+              What Our <span className="text-primary-600">Customers</span> Say
             </h2>
             <p className="text-gray-500">
               Thousands of happy events, one platform
@@ -554,7 +605,7 @@ const HomePage = () => {
               Ready to Plan Your Perfect Event?
             </h2>
             <p className="text-white/80 text-lg mb-8">
-              Join 5000+ happy customers who trusted Evently for their special
+              Join 5000+ happy customers who trusted Evanto for their special
               occasions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

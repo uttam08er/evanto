@@ -36,7 +36,6 @@ function App() {
   return (
     <Suspense fallback={<LoadingSpinner fullScreen />}>
       <Routes>
-
         {/* ── PUBLIC routes with Navbar+Footer ── */}
         <Route element={<MainLayout />}>
           <Route path="/"           element={<HomePage />} />
@@ -89,6 +88,7 @@ function App() {
           </div>
         } />
       </Routes>
+      <div className="w-full h-screen bg-primary-500"></div>
     </Suspense>
   );
 }

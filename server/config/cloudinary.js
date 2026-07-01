@@ -10,7 +10,7 @@ cloudinary.config({
 const venueStorage = new CloudinaryStorage({
   cloudinary,
   params: {
-    folder: "evently/venues",     
+    folder: "evanto/venues",     
     allowed_formats: ["jpg", "jpeg", "png", "webp"], 
     transformation: [{ width: 1200, height: 800, crop: "fill" }], 
   },
@@ -19,7 +19,7 @@ const venueStorage = new CloudinaryStorage({
 const profileStorage = new CloudinaryStorage({
   cloudinary,
   params: {
-    folder: "evently/profiles",
+    folder: "evanto/profiles",
     allowed_formats: ["jpg", "jpeg", "png", "webp"],
     transformation: [{ width: 400, height: 400, crop: "fill" }], 
   },

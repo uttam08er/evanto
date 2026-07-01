@@ -5,7 +5,7 @@ const AboutPage = () => (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
       <div className="text-center mb-12">
         <span className="text-5xl">🎉</span>
-        <h1 className="text-4xl font-bold text-gray-900 mt-4 mb-3">About Evently</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mt-4 mb-3">About Evanto</h1>
         <p className="text-gray-500 text-lg max-w-2xl mx-auto">
           India's most trusted platform for booking event venues. From weddings to corporate
           events, we connect you with the perfect venue for every occasion.

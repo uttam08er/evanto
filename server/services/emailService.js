@@ -16,16 +16,16 @@ const sendVerificationEmail = async (email, name, token) => {
   const verifyUrl = `${process.env.CLIENT_URL}/verify-email?token=${token}`;
 
   const mailOptions = {
-    from: `"Evently" <${process.env.EMAIL_FROM}>`, 
+    from: `"Evanto" <${process.env.EMAIL_FROM}>`, 
     to: email,                       
-    subject: "Verify Your Evently Account",      
+    subject: "Verify Your Evanto Account",      
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <div style="background: #7c3aed; padding: 20px; text-align: center;">
-          <h1 style="color: white; margin: 0;">🎉 Evently</h1>
+          <h1 style="color: white; margin: 0;">🎉 Evanto</h1>
         </div>
         <div style="padding: 30px; background: #f9f9f9;">
-          <h2>Hi ${name}! Welcome to Evently 🎊</h2>
+          <h2>Hi ${name}! Welcome to Evanto 🎊</h2>
           <p>Please verify your email address to start booking amazing venues.</p>
           <div style="text-align: center; margin: 30px 0;">
             <a href="${verifyUrl}" 
@@ -49,13 +49,13 @@ const sendPasswordResetEmail = async (email, name, token) => {
   const resetUrl = `${process.env.CLIENT_URL}/reset-password?token=${token}`;
 
   const mailOptions = {
-    from: `"Evently" <${process.env.EMAIL_FROM}>`,
+    from: `"Evanto" <${process.env.EMAIL_FROM}>`,
     to: email,
-    subject: "Reset Your Evently Password",
+    subject: "Reset Your Evanto Password",
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <div style="background: #7c3aed; padding: 20px; text-align: center;">
-          <h1 style="color: white; margin: 0;">🎉 Evently</h1>
+          <h1 style="color: white; margin: 0;">🎉 Evanto</h1>
         </div>
         <div style="padding: 30px; background: #f9f9f9;">
           <h2>Password Reset Request</h2>
@@ -82,13 +82,13 @@ const sendBookingConfirmationEmail = async (email, name, bookingDetails) => {
   const transporter = createTransporter();
 
   const mailOptions = {
-    from: `"Evently" <${process.env.EMAIL_FROM}>`,
+    from: `"Evanto" <${process.env.EMAIL_FROM}>`,
     to: email,
     subject: `Booking Confirmed! - ${bookingDetails.venueName}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <div style="background: #7c3aed; padding: 20px; text-align: center;">
-          <h1 style="color: white; margin: 0;">🎉 Evently</h1>
+          <h1 style="color: white; margin: 0;">🎉 Evanto</h1>
         </div>
         <div style="padding: 30px; background: #f9f9f9;">
           <h2 style="color: #22c55e;">✅ Booking Confirmed!</h2>

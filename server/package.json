@@ -1,7 +1,7 @@
 {
-  "name": "evently-server",
+  "name": "evanto-server",
   "version": "1.0.0",
-  "description": "Evently Event Management Platform - Backend API",
+  "description": "evanto Event Management Platform - Backend API",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

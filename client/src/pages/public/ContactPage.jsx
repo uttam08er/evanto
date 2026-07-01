@@ -29,7 +29,7 @@ const ContactPage = () => {
         <div className="space-y-6">
           <h2 className="text-xl font-semibold text-gray-900">Get in Touch</h2>
           {[
-            { icon: FiMail, label: "Email Us", value: "hello@evently.in", color: "text-blue-600 bg-blue-50" },
+            { icon: FiMail, label: "Email Us", value: "hello@evanto.in", color: "text-blue-600 bg-blue-50" },
             { icon: FiPhone, label: "Call Us", value: "+91 98765 43210", color: "text-green-600 bg-green-50" },
             { icon: FiMapPin, label: "Visit Us", value: "123 Event Street, Mumbai 400001", color: "text-red-600 bg-red-50" },
           ].map((item) => (

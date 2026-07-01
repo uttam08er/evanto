@@ -22,7 +22,7 @@ const seedUsers = async () => {
   const users = await User.insertMany([
     {
       name: "Super Admin",
-      email: "admin@evently.com",
+      email: "admin@evanto.com",
       password: hashedAdmin,
       phone: "9000000001",
       role: "admin",
@@ -30,7 +30,7 @@ const seedUsers = async () => {
     },
     {
       name: "Rajesh Venue Owner",
-      email: "owner@evently.com",
+      email: "owner@evanto.com",
       password: hashedOwner,
       phone: "9000000002",
       role: "owner",
@@ -38,7 +38,7 @@ const seedUsers = async () => {
     },
     {
       name: "Priya Customer",
-      email: "user@evently.com",
+      email: "user@evanto.com",
       password: hashedUser,
       phone: "9000000003",
       role: "user",
@@ -218,9 +218,9 @@ const runSeed = async () => {
 
     console.log("\n🎉 Database seeded successfully!");
     console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-    console.log("Admin:  admin@evently.com / admin123");
-    console.log("Owner:  owner@evently.com / owner123");
-    console.log("User:   user@evently.com  / user123");
+    console.log("Admin:  admin@evanto.com / admin123");
+    console.log("Owner:  owner@evanto.com / owner123");
+    console.log("User:   user@evanto.com  / user123");
     console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 
     process.exit(0); 

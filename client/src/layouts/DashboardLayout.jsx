@@ -73,7 +73,7 @@ const DashboardLayout = () => {
         {!collapsed && (
           <Link to="/" className="flex items-center space-x-2">
             <span className="text-2xl">🎉</span>
-            <span className="text-xl font-bold text-white tracking-tight">Evently</span>
+            <span className="text-xl font-bold text-white tracking-tight">Evanto</span>
           </Link>
         )}
         {collapsed && <span className="text-2xl">🎉</span>}

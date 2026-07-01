@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <span className="text-2xl">🎉</span>
-              <span className="text-xl font-bold text-white">Evently</span>
+              <span className="text-xl font-bold text-white">Evanto</span>
             </div>
             <p className="text-sm leading-relaxed">
               Your one-stop platform for booking the perfect venue for every occasion.
@@ -30,7 +30,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               {[
                 { to: "/", label: "Home" },
-                { to: "/venues", label: "Browse Venues" },
+                { to: "/venues", label: "Venues" },
                 { to: "/about", label: "About Us" },
                 { to: "/contact", label: "Contact" },
               ].map((link) => (
@@ -69,14 +69,14 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <FiMail className="text-primary-400 flex-shrink-0" />
-                <span>hello@evently.in</span>
+                <span>hello@evanto.in</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm">
-          <p>© {currentYear} Evently. All rights reserved.</p>
+          <p>© {currentYear} Evanto. All rights reserved.</p>
           <div className="flex space-x-4 mt-3 md:mt-0">
             <a href="#" className="hover:text-primary-400">Privacy Policy</a>
             <a href="#" className="hover:text-primary-400">Terms of Service</a>

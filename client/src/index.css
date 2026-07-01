@@ -37,8 +37,145 @@
            focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent
            transition-colors duration-200;
   }
+  /* ── BASE GLASS ─────────────────────────────────────────── */
+  .glass {
+    @apply backdrop-blur-md bg-white/10 border border-white/20 shadow-lg;
+  }
+
+  /* ── INTENSITY VARIANTS ──────────────────────────────────── */
+  .glass-xs {
+    @apply backdrop-blur-sm bg-white/5 border border-white/10 shadow-sm;
+  }
+
+  .glass-sm {
+    @apply backdrop-blur-sm bg-white/8 border border-white/15 shadow-md;
+  }
+
+  .glass-md {
+    @apply backdrop-blur-md bg-white/10 border border-white/20 shadow-lg;
+  }
+
+  .glass-lg {
+    @apply backdrop-blur-xl bg-white/15 border border-white/25 shadow-xl;
+  }
+
+  .glass-xl {
+    @apply backdrop-blur-2xl bg-white/20 border border-white/30 shadow-2xl;
+  }
+
+  /* ── DARK-TINTED GLASS (works on light backgrounds) ─────── */
+  .glass-dark {
+    @apply backdrop-blur-md bg-black/20 border border-white/10 shadow-lg;
+  }
+
+  .glass-dark-sm {
+    @apply backdrop-blur-sm bg-black/10 border border-white/5 shadow-md;
+  }
+
+  .glass-dark-lg {
+    @apply backdrop-blur-xl bg-black/30 border border-white/15 shadow-xl;
+  }
+
+  /* ── COLORED GLASS VARIANTS ──────────────────────────────── */
+  .glass-violet {
+    @apply backdrop-blur-md bg-violet-500/15 border border-violet-300/25 shadow-lg shadow-violet-500/10;
+  }
+
+  .glass-blue {
+    @apply backdrop-blur-md bg-blue-500/15 border border-blue-300/25 shadow-lg shadow-blue-500/10;
+  }
+
+  .glass-rose {
+    @apply backdrop-blur-md bg-rose-500/15 border border-rose-300/25 shadow-lg shadow-rose-500/10;
+  }
+
+  .glass-amber {
+    @apply backdrop-blur-md bg-amber-500/15 border border-amber-300/25 shadow-lg shadow-amber-500/10;
+  }
+
+  .glass-emerald {
+    @apply backdrop-blur-md bg-emerald-500/15 border border-emerald-300/25 shadow-lg shadow-emerald-500/10;
+  }
+
+  .glass-cyan {
+    @apply backdrop-blur-md bg-cyan-500/15 border border-cyan-300/25 shadow-lg shadow-cyan-500/10;
+  }
+
+  /* ── FROSTED CARD (most common use-case) ────────────────── */
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20
+           shadow-[0_8px_32px_rgba(0,0,0,0.2)]
+           rounded-2xl;
+  }
+
+  .glass-card-sm {
+    @apply backdrop-blur-md bg-white/10 border border-white/20
+           shadow-[0_4px_16px_rgba(0,0,0,0.15)]
+           rounded-xl;
+  }
+
+  .glass-card-lg {
+    @apply backdrop-blur-2xl bg-white/15 border border-white/25
+           shadow-[0_16px_48px_rgba(0,0,0,0.25)]
+           rounded-3xl;
+  }
+
+  /* ── GLASS BUTTON ───────────────────────────────────────── */
+  .glass-btn {
+    @apply backdrop-blur-md bg-white/15 border border-white/25
+           text-white font-semibold px-6 py-3 rounded-xl
+           shadow-[0_4px_16px_rgba(0,0,0,0.2)]
+           hover:bg-white/25 hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)]
+           active:scale-95
+           transition-all duration-200;
+  }
+
+  /* ── GLASS INPUT ────────────────────────────────────────── */
+  .glass-input {
+    @apply backdrop-blur-md bg-white/10 border border-white/20
+           text-white placeholder-white/50
+           px-4 py-3 rounded-xl w-full
+           focus:outline-none focus:ring-2 focus:ring-white/30 focus:bg-white/15
+           transition-all duration-200;
+  }
+
+  /* ── GLASS NAVBAR ───────────────────────────────────────── */
+  .glass-nav {
+    @apply backdrop-blur-lg bg-white/8 border-b border-white/15
+           shadow-[0_2px_20px_rgba(0,0,0,0.15)];
+  }
+
+  /* ── GLASS BADGE / PILL ─────────────────────────────────── */
+  .glass-badge {
+    @apply backdrop-blur-sm bg-white/15 border border-white/25
+           text-white text-xs font-semibold
+           px-3 py-1 rounded-full;
+  }
+
+  /* ── INNER GLOW HIGHLIGHT (top-edge shine) ───────────────── */
+  .glass-shine {
+    @apply relative overflow-hidden;
+  }
+  .glass-shine::before {
+    content: "";
+    @apply absolute top-0 left-0 right-0 h-px
+           bg-gradient-to-r from-transparent via-white/50 to-transparent;
+  }
+
+  /* ── BOTTOM-GLOW VARIANT ─────────────────────────────────── */
+  .glass-glow::after {
+    content: "";
+    @apply absolute bottom-0 left-0 right-0 h-px
+           bg-gradient-to-r from-transparent via-white/30 to-transparent;
+  }
 }
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { @apply bg-gray-100; }
-::-webkit-scrollbar-thumb { @apply bg-primary-400 rounded-full; }
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-400 rounded-full;
+}
