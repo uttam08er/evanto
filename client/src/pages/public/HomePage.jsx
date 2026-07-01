@@ -177,6 +177,7 @@ const HomePage = () => {
       try {
         const { data } = await venueAPI.getFeatured();
         setFeaturedVenues(data.venues || 0);
+        console.log(featuredVenues);
       } catch (error) {
         console.error("Failed to load featured venues");
       } finally {
@@ -399,11 +400,11 @@ const HomePage = () => {
             </div>
           ) : (
             <>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {featuredVenues.map((venue) => (
                   <VenueCard key={venue._id} venue={venue} />
                 ))}
-              </div>
+              </div> */}
               <div className="flex justify-center mt-10">
                 <button
                   onClick={() => navigate("/venues")}
