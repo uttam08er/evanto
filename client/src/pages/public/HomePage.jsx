@@ -177,7 +177,6 @@ const HomePage = () => {
       try {
         const { data } = await venueAPI.getFeatured();
         setFeaturedVenues(data.venues || 0);
-        console.log(featuredVenues);
       } catch (error) {
         console.error("Failed to load featured venues");
       } finally {
@@ -186,7 +185,7 @@ const HomePage = () => {
     };
     fetchFeatured();
   }, []);
-
+  
   const handleSearch = (e) => {
     e.preventDefault();
     const params = new URLSearchParams();
@@ -195,7 +194,7 @@ const HomePage = () => {
     if (searchData.guests) params.set("capacity", searchData.guests);
     navigate(`/venues?${params.toString()}`);
   };
-
+  
   return (
     <div>
       <section className="relative min-h-[90vh] py-5 flex items-center justify-center overflow-hidden">
@@ -400,11 +399,11 @@ const HomePage = () => {
             </div>
           ) : (
             <>
-              {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {featuredVenues.map((venue) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* {featuredVenues.map((venue) => (
                   <VenueCard key={venue._id} venue={venue} />
-                ))}
-              </div> */}
+                ))} */}
+              </div>
               <div className="flex justify-center mt-10">
                 <button
                   onClick={() => navigate("/venues")}
